@@ -500,7 +500,7 @@ KARACHI <span>JUMMA</span> BIRYANI
 
 </ul>
 
-<a href="https://wa.me/923001234567" class="order-btn">
+<a href="https://wa.me/966564241776" class="order-btn">
 
 Order Now
 
@@ -536,7 +536,7 @@ Explore Menu
 
 </a>
 
-<a href="https://wa.me/923001234567" class="btn secondary">
+<a href="https://wa.me/966564241776" class="btn secondary">
 
 <i class="fab fa-whatsapp"></i>
 
@@ -707,7 +707,7 @@ Starting From Rs. ___
 
 <br>
 
-<a href="https://wa.me/923001234567"
+<a href="https://wa.me/966564241776"
 
 style="display:inline-block;
 padding:15px 35px;
@@ -1279,7 +1279,7 @@ Rs. ______
 
 <br>
 
-<a href="https://wa.me/923001234567"
+<a href="https://wa.me/966564241776"
 
 style="display:inline-block;
 padding:18px 45px;
@@ -1668,7 +1668,7 @@ Tap below to place your order instantly.
 
 <br>
 
-<a href="https://wa.me/923001234567"
+<a href="https://wa.me/966564241776"
 
 style="display:inline-block;
 padding:16px 35px;
@@ -1688,7 +1688,7 @@ Chat on WhatsApp
 
 <p>
 
-📞 +92 300 1234567
+📞 +966 564241776
 
 </p>
 
@@ -1728,7 +1728,7 @@ without worrying about cooking every evening.
 
 </p>
 
-<a href="https://wa.me/923001234567"
+<a href="https://wa.me/966564241776"
 
 style="display:inline-block;
 padding:20px 50px;
@@ -1825,3 +1825,265 @@ Made with ❤️ for food lovers.
 </center>
 
 </footer>
+
+  <!-- ====================================== -->
+<!-- SCROLL TO TOP BUTTON -->
+<!-- ====================================== -->
+
+<button id="topBtn"
+style="
+position:fixed;
+bottom:110px;
+right:25px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#4CAF50;
+color:white;
+font-size:22px;
+cursor:pointer;
+display:none;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+z-index:999;
+transition:.3s;">
+<i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Floating WhatsApp -->
+
+<a href="https://wa.me/966564241776"
+class="whatsapp"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- AOS -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+// ==============================
+// AOS
+// ==============================
+
+AOS.init({
+
+duration:900,
+
+once:true,
+
+offset:80
+
+});
+
+// ==============================
+// Scroll To Top
+// ==============================
+
+const topBtn=document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+topBtn.style.display="flex";
+
+topBtn.style.alignItems="center";
+
+topBtn.style.justifyContent="center";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+// ==============================
+// Active Navigation
+// ==============================
+
+const sections=document.querySelectorAll("section");
+
+const navLinks=document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll",()=>{
+
+let current="";
+
+sections.forEach(section=>{
+
+const sectionTop=section.offsetTop-120;
+
+if(pageYOffset>=sectionTop){
+
+current=section.getAttribute("id");
+
+}
+
+});
+
+navLinks.forEach(link=>{
+
+link.style.color="#444";
+
+if(link.getAttribute("href")==="#"+current){
+
+link.style.color="#4CAF50";
+
+}
+
+});
+
+});
+
+// ==============================
+// Image Hover Zoom
+// ==============================
+
+document.querySelectorAll(".card img").forEach(img=>{
+
+img.addEventListener("mouseenter",()=>{
+
+img.style.transform="scale(1.08)";
+
+img.style.transition=".5s";
+
+});
+
+img.addEventListener("mouseleave",()=>{
+
+img.style.transform="scale(1)";
+
+});
+
+});
+
+// ==============================
+// Ripple Effect
+// ==============================
+
+document.querySelectorAll(".btn,.order-btn").forEach(button=>{
+
+button.addEventListener("click",function(e){
+
+let ripple=document.createElement("span");
+
+let rect=this.getBoundingClientRect();
+
+let size=Math.max(rect.width,rect.height);
+
+ripple.style.width=size+"px";
+
+ripple.style.height=size+"px";
+
+ripple.style.position="absolute";
+
+ripple.style.borderRadius="50%";
+
+ripple.style.background="rgba(255,255,255,.4)";
+
+ripple.style.left=(e.clientX-rect.left-size/2)+"px";
+
+ripple.style.top=(e.clientY-rect.top-size/2)+"px";
+
+ripple.style.pointerEvents="none";
+
+ripple.style.animation="ripple .7s linear";
+
+this.style.position="relative";
+
+this.style.overflow="hidden";
+
+this.appendChild(ripple);
+
+setTimeout(()=>{
+
+ripple.remove();
+
+},700);
+
+});
+
+});
+
+// ==============================
+// Ripple CSS
+// ==============================
+
+const style=document.createElement("style");
+
+style.innerHTML=`
+
+@keyframes ripple{
+
+from{
+
+transform:scale(0);
+
+opacity:1;
+
+}
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
+
+`;
+
+document.head.appendChild(style);
+
+// ==============================
+// Loading Fade
+// ==============================
+
+window.addEventListener("load",()=>{
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+document.body.style.transition="opacity .8s";
+
+document.body.style.opacity="1";
+
+},100);
+
+});
+
+// ==============================
+// Footer Year
+// ==============================
+
+document.querySelector("footer center").innerHTML=
+
+"© "+new Date().getFullYear()+" Karachi Jumma Biryani. All Rights Reserved.";
+
+</script>
+
+</body>
+
+</html>
