@@ -472,6 +472,45 @@ display:none;
 
 }
 
+
+.variant-box{
+margin:16px 0 12px;
+padding:12px 14px;
+background:#FFF8E1;
+border-left:4px solid #4CAF50;
+border-radius:12px;
+min-height:88px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.variant-label{
+font-size:11px;
+font-weight:700;
+letter-spacing:1.2px;
+text-transform:uppercase;
+color:#8D6E63;
+margin-bottom:4px;
+}
+
+.variant-text{
+font-size:16px;
+font-weight:700;
+color:#2E7D32;
+line-height:1.4;
+}
+
+.menu-card-img{
+transition:opacity .6s ease-in-out;
+}
+
+.card-list{
+margin-top:15px;
+color:#666;
+line-height:2;
+}
+
 </style>
 
 </head>
@@ -569,7 +608,7 @@ We believe homemade food brings families together. Every meal is cooked fresh us
 
 <div class="card" data-aos="fade-up">
 
-<img src="https://images.unsplash.com/photo-1604908554027-5b0b59e4f2b2?auto=format&fit=crop&w=1200&q=80">
+<img src="./images/b-2.jpg">
 
 <div class="card-content">
 
@@ -613,7 +652,7 @@ Fresh vegetables, premium basmati rice, halal meat, aromatic herbs and hand-sele
 
 <div class="card" data-aos="fade-up" data-aos-delay="300">
 
-<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80">
+<img src="./images/card-family.png">
 
 <div class="card-content">
 
@@ -659,7 +698,7 @@ Freshly cooked every Friday. Limited quantity. Pre-order before Thursday evening
 
 <div class="card" data-aos="zoom-in">
 
-<img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1400&q=80">
+<img src="./images/chick-biryani.png">
 
 <div class="card-content">
 
@@ -922,37 +961,27 @@ Perfect for busy professionals, students and families.
 
 <div class="card" data-aos="fade-up">
 
-<img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1200&q=80">
+<img class="menu-card-img" src="./images/chicken-karahi.jpg">
 
 <div class="card-content">
 
-<span class="badge">
+<span class="badge">Saturday</span>
 
-Saturday
+<h3>Chicken Variations</h3>
 
-</span>
-
-<h3>Chicken Karahi / Chicken Qorma</h3>
+<div class="variant-box">
+<span class="variant-label">Auto-rotating menu</span>
+<div class="variant-text" data-variants="Chicken Desi Karahi|Chicken Qorma|Chicken Achar Gosht|Chicken White Karahi|Chicken White Karahi" data-images="./images/chicken-karahi.jpg|./images/chicken-korma-pakistani.jpg|./images/achar-gosht.jpg|./images/white-karahi.webp|./images/white-karahi-2.webp"></div>
+</div>
 
 <p>
-
-Fresh chicken cooked in tomatoes, green chillies,
-ginger and traditional Pakistani spices.
-
+Fresh chicken dishes cooked with rich Pakistani spices and served with chapati and salad.
 </p>
 
-<div style="margin-top:15px;color:#666;line-height:2;">
-
-✔ Fresh Chapati
-
-<br>
-
-✔ Salad
-
-<br>
-
+<div class="card-list">
+✔ Fresh Chapati<br>
+✔ Salad<br>
 ✔ Homemade Taste
-
 </div>
 
 </div>
@@ -963,37 +992,27 @@ ginger and traditional Pakistani spices.
 
 <div class="card" data-aos="fade-up" data-aos-delay="100">
 
-<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80">
+<img class="menu-card-img" src="./images/dal-chawal.webp">
 
 <div class="card-content">
 
-<span class="badge">
+<span class="badge">Sunday</span>
 
-Sunday
+<h3>Rice & Lentil Variations</h3>
 
-</span>
-
-<h3>Chicken Pulao</h3>
+<div class="variant-box">
+<span class="variant-label">Auto-rotating menu</span>
+<div class="variant-text" data-variants="Dal Chawal|Dal Chawal|Kaadi Paakoda Chawal|Kaadi Paakoda Chawal|Kaadi Paakoda Chawal" data-images="./images/dal-chawal.webp|./images/dal-chawal-2.jpg|./images/kaadi-pakoda-chawal.webp|./images/kadi-pakoda-chawal.jpg|./images/pakoda-kadhi--chawal.jpg"></div>
+</div>
 
 <p>
-
-Aromatic basmati rice cooked with tender chicken,
-whole spices and served with chilled raita.
-
+Comforting homemade rice and lentil meals with aromatic spices and fresh sides.
 </p>
 
-<div style="margin-top:15px;color:#666;line-height:2;">
-
-✔ Premium Rice
-
-<br>
-
-✔ Raita
-
-<br>
-
+<div class="card-list">
+✔ Premium Rice<br>
+✔ Raita<br>
 ✔ Fresh Salad
-
 </div>
 
 </div>
@@ -1004,37 +1023,27 @@ whole spices and served with chilled raita.
 
 <div class="card" data-aos="fade-up" data-aos-delay="200">
 
-<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80">
+<img class="menu-card-img" src="./images/bindi-with-chapati.jpg">
 
 <div class="card-content">
 
-<span class="badge">
+<span class="badge">Monday</span>
 
-Monday
+<h3>Vegetable Variations</h3>
 
-</span>
-
-<h3>Daal Chawal</h3>
+<div class="variant-box">
+<span class="variant-label">Auto-rotating menu</span>
+<div class="variant-text" data-variants="Bindi|Torai|Gobi Aalu|Shimla Aalu|Bengan Ka Barta" data-images="./images/bindi-with-chapati.jpg|./images/torai-with-chapati.jpg|./images/goobi-aalu-with-2-chapati.jpg|./images/shimla-aalu-with-chapati.jpg|./images/Baingan-Bharta-Recipe.jpg"></div>
+</div>
 
 <p>
-
-Comfort food prepared with yellow lentils,
-steamed rice and crispy potato fry.
-
+Seasonal vegetables cooked with traditional herbs and served with fresh chapati.
 </p>
 
-<div style="margin-top:15px;color:#666;line-height:2;">
-
-✔ Healthy
-
-<br>
-
-✔ Light Dinner
-
-<br>
-
-✔ Homemade
-
+<div class="card-list">
+✔ Healthy<br>
+✔ Vegetarian<br>
+✔ Fresh Chapati
 </div>
 
 </div>
@@ -1045,37 +1054,27 @@ steamed rice and crispy potato fry.
 
 <div class="card" data-aos="fade-up">
 
-<img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1200&q=80">
+<img class="menu-card-img" src="./images/shami-kabab.webp">
 
 <div class="card-content">
 
-<span class="badge">
+<span class="badge">Tuesday</span>
 
-Tuesday
+<h3>Snack & Bread Variations</h3>
 
-</span>
-
-<h3>Chicken Qorma</h3>
+<div class="variant-box">
+<span class="variant-label">Auto-rotating menu</span>
+<div class="variant-text" data-variants="Shami Kabaab|Aalu Kabaab|Chicken Paratha|Chicken Paratha|Aalu Paratha with Green Chatni" data-images="./images/shami-kabab.webp|./images/aalu-kabab.jpg|./images/chicken-cheese-porata.jpg|./images/chicken-cheese-porata-2.jpg|./images/Aloo_Paratha_with_Green_Chutney.JPG"></div>
+</div>
 
 <p>
-
-Rich creamy curry cooked slowly with
-traditional spices and served with fresh naan.
-
+A delicious mix of hearty snacks and parathas with green chutney and homemade flavor.
 </p>
 
-<div style="margin-top:15px;color:#666;line-height:2;">
-
-✔ Soft Naan
-
-<br>
-
-✔ Homemade Masala
-
-<br>
-
-✔ Fresh Curry
-
+<div class="card-list">
+✔ Soft Paratha<br>
+✔ Green Chatni<br>
+✔ Freshly Prepared
 </div>
 
 </div>
@@ -1086,37 +1085,27 @@ traditional spices and served with fresh naan.
 
 <div class="card" data-aos="fade-up" data-aos-delay="100">
 
-<img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1200&q=80">
+<img class="menu-card-img" src="./images/chicken-chowmen.jpg">
 
 <div class="card-content">
 
-<span class="badge">
+<span class="badge">Wednesday</span>
 
-Wednesday
+<h3>Chinese Style Variations</h3>
 
-</span>
-
-<h3>Mixed Vegetable</h3>
+<div class="variant-box">
+<span class="variant-label">Auto-rotating menu</span>
+<div class="variant-text" data-variants="Chicken Chow Mein|Chicken Chow Mein|Chicken Macaroni" data-images="./images/chicken-chowmen.jpg|./images/chicken-chowmen-2.jpg|./images/chicken-macroni.jpg"></div>
+</div>
 
 <p>
-
-Seasonal vegetables cooked with herbs,
-served with chapati and homemade achar.
-
+Stir-fried noodles and pasta with chicken, vegetables and a savory homemade sauce.
 </p>
 
-<div style="margin-top:15px;color:#666;line-height:2;">
-
-✔ Healthy
-
-<br>
-
-✔ Vegetarian
-
-<br>
-
-✔ Fresh Chapati
-
+<div class="card-list">
+✔ Quick Dinner<br>
+✔ Flavorful Sauce<br>
+✔ Homemade Style
 </div>
 
 </div>
@@ -1127,43 +1116,32 @@ served with chapati and homemade achar.
 
 <div class="card" data-aos="fade-up" data-aos-delay="200">
 
-<img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=1200&q=80">
+<img class="menu-card-img" src="./images/mixed-sabzi.jpg">
 
 <div class="card-content">
 
-<span class="badge">
+<span class="badge">Thursday</span>
 
-Thursday
+<h3>Mixed Sabzi</h3>
 
-</span>
-
-<h3>Beef Haleem</h3>
+<div class="variant-box">
+<span class="variant-label">Auto-rotating menu</span>
+<div class="variant-text" data-variants="Mixed Sabzi" data-images="./images/mixed-sabzi.jpg"></div>
+</div>
 
 <p>
-
-Slow-cooked beef, lentils and wheat blended
-into Pakistan's most loved comfort food.
-
+A wholesome mix of fresh vegetables cooked in a simple, comforting home-style way.
 </p>
 
-<div style="margin-top:15px;color:#666;line-height:2;">
-
-✔ Lemon
-
-<br>
-
-✔ Fried Onion
-
-<br>
-
-✔ Naan Included
-
+<div class="card-list">
+✔ Fresh Vegetables<br>
+✔ Light & Healthy<br>
+✔ Homemade Taste
 </div>
 
 </div>
 
 </div>
-
 </div>
 
 </section>
@@ -1393,32 +1371,32 @@ Every meal is prepared fresh with authentic homemade recipes.
 
 </p>
 
-<div style="display:grid;
+<div id="galleryGrid" style="display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;">
 
 <div class="card" data-aos="zoom-in">
-<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=80">
+<img class="gallery-img">
 </div>
 
 <div class="card" data-aos="zoom-in" data-aos-delay="100">
-<img src="https://images.unsplash.com/photo-1563379091339-03246963d29a?auto=format&fit=crop&w=900&q=80">
+<img class="gallery-img">
 </div>
 
 <div class="card" data-aos="zoom-in" data-aos-delay="200">
-<img src="https://images.unsplash.com/photo-1604908176997-4317f06b4df6?auto=format&fit=crop&w=900&q=80">
+<img class="gallery-img">
 </div>
 
 <div class="card" data-aos="zoom-in">
-<img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80">
+<img class="gallery-img">
 </div>
 
 <div class="card" data-aos="zoom-in" data-aos-delay="100">
-<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80">
+<img class="gallery-img">
 </div>
 
 <div class="card" data-aos="zoom-in" data-aos-delay="200">
-<img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=80">
+<img class="gallery-img">
 </div>
 
 </div>
@@ -1823,6 +1801,80 @@ Made with ❤️ for food lovers.
 </center>
 
 </footer>
+
+<script>
+const variantElements = document.querySelectorAll('.variant-text');
+
+variantElements.forEach((element) => {
+const variants = element.dataset.variants.split('|');
+const imageUrls = (element.dataset.images || '').split('|').filter(Boolean);
+const card = element.closest('.card');
+const image = card ? card.querySelector('img') : null;
+let index = 0;
+
+const showVariant = () => {
+element.textContent = variants[index];
+
+if (image && imageUrls.length) {
+const nextSrc = imageUrls[index];
+if (nextSrc && image.getAttribute('src') !== nextSrc) {
+image.style.opacity = '0';
+setTimeout(() => {
+image.src = nextSrc;
+image.style.opacity = '1';
+}, 250);
+}
+}
+
+index = (index + 1) % variants.length;
+};
+
+showVariant();
+setInterval(showVariant, 3200);
+});
+</script>
+
+<script>
+const galleryImages = [
+"Aloo_Paratha_with_Green_Chutney.JPG",
+"Baingan-Bharta-Recipe.jpg",
+"aalu-kabab.jpg",
+"achar-gosht.jpg",
+"b-2.jpg",
+"bindi-with-chapati.jpg",
+"card-family.png",
+"chick-2.png",
+"chick-biryani.png",
+"chicken-biryani.jpg",
+"chicken-cheese-porata-2.jpg",
+"chicken-cheese-porata.jpg",
+"chicken-chowmen-2.jpg",
+"chicken-chowmen.jpg",
+"chicken-karahi.jpg",
+"chicken-korma-pakistani.jpg",
+"chicken-macroni.jpg",
+"dal-chawal-2.jpg",
+"dal-chawal.webp",
+"goobi-aalu-with-2-chapati.jpg",
+"kaadi-pakoda-chawal.webp",
+"kadi-pakoda-chawal.jpg",
+"mixed-sabzi.jpg",
+"pakoda-kadhi--chawal.jpg",
+"shami-kabab.webp",
+"shimla-aalu-with-chapati.jpg",
+"torai-with-chapati.jpg",
+"white-karahi-2.webp",
+"white-karahi.webp"
+];
+
+const galleryImgEls = document.querySelectorAll("#galleryGrid .gallery-img");
+
+const shuffled = [...galleryImages].sort(() => Math.random() - 0.5);
+
+galleryImgEls.forEach((img, i) => {
+img.src = "./images/" + shuffled[i % shuffled.length];
+});
+</script>
 
   <!-- ====================================== -->
 <!-- SCROLL TO TOP BUTTON -->
