@@ -619,6 +619,210 @@ color:#666;
 line-height:2;
 }
 
+/* Subscribe Modal */
+
+.modal-overlay{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+z-index:2000;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.modal-overlay.active{
+display:flex;
+}
+
+.modal-box{
+background:#fff;
+width:100%;
+max-width:520px;
+max-height:90vh;
+overflow-y:auto;
+border-radius:20px;
+padding:35px 30px;
+position:relative;
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+
+.modal-close{
+position:absolute;
+top:16px;
+right:18px;
+background:none;
+border:none;
+font-size:28px;
+line-height:1;
+color:#888;
+cursor:pointer;
+}
+
+.modal-close:hover{
+color:#2E7D32;
+}
+
+.modal-box h3{
+color:#2E7D32;
+font-size:26px;
+margin-bottom:8px;
+}
+
+.modal-box > p{
+color:#777;
+margin-bottom:22px;
+font-size:15px;
+}
+
+.modal-box label{
+display:block;
+font-weight:600;
+font-size:14px;
+color:#444;
+margin:16px 0 6px;
+}
+
+.modal-box input[type="text"],
+.modal-box input[type="tel"],
+.modal-box input[type="time"]{
+width:100%;
+padding:12px 14px;
+border:2px solid #e2ddc8;
+border-radius:10px;
+font-size:15px;
+font-family:inherit;
+outline:none;
+transition:.2s;
+}
+
+.modal-box input[type="text"]:focus,
+.modal-box input[type="tel"]:focus,
+.modal-box input[type="time"]:focus{
+border-color:#4CAF50;
+}
+
+.time-range{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.time-range input{
+flex:1;
+}
+
+#captureLocationBtn{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:11px 20px;
+background:#eef6ea;
+border:2px solid #4CAF50;
+color:#2E7D32;
+border-radius:40px;
+font-weight:600;
+cursor:pointer;
+font-size:14px;
+transition:.2s;
+}
+
+#captureLocationBtn:hover{
+background:#4CAF50;
+color:white;
+}
+
+#locationStatus{
+margin-top:10px;
+font-size:13.5px;
+color:#666;
+line-height:1.6;
+}
+
+#locationStatus a{
+color:#2E7D32;
+font-weight:600;
+}
+
+.spice-options{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.spice-options label{
+display:flex;
+align-items:center;
+gap:6px;
+font-weight:500;
+margin:0;
+background:#FFF8E1;
+border:2px solid #e2ddc8;
+padding:10px 16px;
+border-radius:40px;
+cursor:pointer;
+font-size:14px;
+transition:.2s;
+}
+
+.spice-options input{
+accent-color:#4CAF50;
+}
+
+.spice-options label:has(input:checked){
+border-color:#4CAF50;
+background:#eef6ea;
+}
+
+.send-whatsapp-btn{
+width:100%;
+margin-top:26px;
+padding:16px;
+background:#25D366;
+color:white;
+border:none;
+border-radius:40px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+transition:.3s;
+}
+
+.send-whatsapp-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 30px rgba(37,211,102,.4);
+}
+
+.subscribe-open-btn{
+display:inline-flex;
+align-items:center;
+gap:10px;
+padding:18px 45px;
+background:#25D366;
+color:white;
+border:none;
+text-decoration:none;
+border-radius:50px;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+font-family:inherit;
+}
+
+@media(max-width:600px){
+.modal-box{
+padding:28px 20px;
+}
+.spice-options{
+flex-direction:column;
+}
+}
+
 </style>
 
 </head>
@@ -1351,20 +1555,13 @@ SAR. 550
 </p>
 
 <br>
-<a href="https://wa.me/966564241776?text=Hi%2C%20I%20am%20interested%20in%20your%20monthly%206-day-a-week%20meal%20subscription%20with%20the%20provided%20menu.%20Could%20you%20please%20share%20the%20subscription%20details%2C%20pricing%2C%20and%20confirm%20how%20I%20can%20subscribe%3F"
-   style="display:inline-block;
-   padding:18px 45px;
-   background:#25D366;
-   color:white;
-   text-decoration:none;
-   border-radius:50px;
-   font-weight:bold;">
+<button type="button" class="subscribe-open-btn" onclick="openSubscribeModal()">
 
     <i class="fab fa-whatsapp"></i>
 
     Subscribe Now
 
-</a>
+</button>
 
 </div>
 
@@ -1984,6 +2181,63 @@ img.alt = toAltText(file) + " - Karachi Jumma Biryani homemade dish";
 </script>
 
   <!-- ====================================== -->
+<!-- MONTHLY SUBSCRIBE MODAL -->
+<!-- ====================================== -->
+
+<div id="subscribeModal" class="modal-overlay">
+
+<div class="modal-box">
+
+<button type="button" class="modal-close" onclick="closeSubscribeModal()" aria-label="Close">&times;</button>
+
+<h3>Monthly Dinner Subscription</h3>
+
+<p>Fill in your details below and we'll send everything to us on WhatsApp to confirm your subscription.</p>
+
+<form id="subscribeForm">
+
+<label for="subFullName">Full Name *</label>
+<input type="text" id="subFullName" required placeholder="Your full name">
+
+<label for="subPhone">Phone Number (WhatsApp) *</label>
+<input type="tel" id="subPhone" required placeholder="e.g. 966564241776">
+
+<label for="subCountry">Country (optional)</label>
+<input type="text" id="subCountry" placeholder="e.g. Saudi Arabia">
+
+<label>Current Location (optional)</label>
+<button type="button" id="captureLocationBtn" onclick="captureLocation()">
+<i class="fas fa-location-dot"></i>
+Capture My Location
+</button>
+<div id="locationStatus"></div>
+
+<label>Dinner Timing Range *</label>
+<div class="time-range">
+<input type="time" id="subTimeFrom" required>
+<span>to</span>
+<input type="time" id="subTimeTo" required>
+</div>
+
+<label>Spice Level *</label>
+<div class="spice-options">
+<label><input type="radio" name="spice" value="Spicy" required> Spicy</label>
+<label><input type="radio" name="spice" value="Normal Spicy"> Normal Spicy</label>
+<label><input type="radio" name="spice" value="Without Spice"> Without Spice</label>
+</div>
+
+<button type="submit" class="send-whatsapp-btn">
+<i class="fab fa-whatsapp"></i>
+Send via WhatsApp
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- ====================================== -->
 <!-- SCROLL TO TOP BUTTON -->
 <!-- ====================================== -->
 
@@ -2238,6 +2492,137 @@ document.body.style.opacity="1";
 document.querySelector("footer center").innerHTML=
 
 "© "+new Date().getFullYear()+" Karachi Jumma Biryani. All Rights Reserved.";
+
+</script>
+
+<!-- ==================================== -->
+<!-- MONTHLY SUBSCRIBE MODAL LOGIC -->
+<!-- ==================================== -->
+
+<script>
+
+const subscribeModal = document.getElementById("subscribeModal");
+const subscribeForm = document.getElementById("subscribeForm");
+const locationStatus = document.getElementById("locationStatus");
+const captureLocationBtn = document.getElementById("captureLocationBtn");
+
+let capturedLocationLink = "";
+
+function openSubscribeModal(){
+subscribeModal.classList.add("active");
+document.body.style.overflow = "hidden";
+}
+
+function closeSubscribeModal(){
+subscribeModal.classList.remove("active");
+document.body.style.overflow = "";
+}
+
+subscribeModal.addEventListener("click", (e)=>{
+if(e.target === subscribeModal){
+closeSubscribeModal();
+}
+});
+
+document.addEventListener("keydown", (e)=>{
+if(e.key === "Escape" && subscribeModal.classList.contains("active")){
+closeSubscribeModal();
+}
+});
+
+function captureLocation(){
+
+if(!navigator.geolocation){
+locationStatus.textContent = "⚠️ Geolocation is not supported by your browser.";
+return;
+}
+
+captureLocationBtn.disabled = true;
+locationStatus.textContent = "📡 Fetching your current location...";
+
+navigator.geolocation.getCurrentPosition(
+(position)=>{
+
+const lat = position.coords.latitude.toFixed(6);
+const lng = position.coords.longitude.toFixed(6);
+
+capturedLocationLink = "https://www.google.com/maps?q=" + lat + "," + lng;
+
+locationStatus.innerHTML = "✅ Location captured — <a href=\"" + capturedLocationLink + "\" target=\"_blank\">view on Google Maps</a>";
+
+captureLocationBtn.disabled = false;
+
+},
+(error)=>{
+
+capturedLocationLink = "";
+locationStatus.textContent = "⚠️ Could not get your location (" + error.message + "). You can still submit without it.";
+captureLocationBtn.disabled = false;
+
+},
+{ enableHighAccuracy:true, timeout:10000, maximumAge:0 }
+);
+}
+
+function formatTimeLabel(value){
+
+if(!value) return "";
+
+const [hourStr, minuteStr] = value.split(":");
+let hour = parseInt(hourStr, 10);
+const suffix = hour >= 12 ? "PM" : "AM";
+
+hour = hour % 12;
+if(hour === 0) hour = 12;
+
+return hour + ":" + minuteStr + " " + suffix;
+}
+
+subscribeForm.addEventListener("submit", (e)=>{
+
+e.preventDefault();
+
+const fullName = document.getElementById("subFullName").value.trim();
+const phone = document.getElementById("subPhone").value.trim();
+const country = document.getElementById("subCountry").value.trim();
+const timeFrom = document.getElementById("subTimeFrom").value;
+const timeTo = document.getElementById("subTimeTo").value;
+const spiceEl = document.querySelector('input[name="spice"]:checked');
+
+if(!fullName || !phone || !timeFrom || !timeTo || !spiceEl){
+alert("Please fill all required fields: Full Name, WhatsApp Number, Dinner Timing Range and Spice Level.");
+return;
+}
+
+const spice = spiceEl.value;
+
+let message = "Hi, I would like to subscribe to the Monthly Dinner Package.\n\n";
+message += "Full Name: " + fullName + "\n";
+message += "WhatsApp Number: " + phone + "\n";
+
+if(country){
+message += "Country: " + country + "\n";
+}
+
+message += "Dinner Timing: " + formatTimeLabel(timeFrom) + " to " + formatTimeLabel(timeTo) + "\n";
+message += "Spice Level: " + spice + "\n";
+
+if(capturedLocationLink){
+message += "My Location: " + capturedLocationLink + "\n";
+}
+
+message += "\nPlease confirm my subscription and let me know the next steps.";
+
+const waUrl = "https://wa.me/966564241776?text=" + encodeURIComponent(message);
+
+window.open(waUrl, "_blank");
+
+closeSubscribeModal();
+subscribeForm.reset();
+capturedLocationLink = "";
+locationStatus.textContent = "";
+
+});
 
 </script>
 
