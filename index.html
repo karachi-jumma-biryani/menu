@@ -1014,6 +1014,41 @@ font-weight:700;
 word-break:break-all;
 }
 
+.bank-row-value-wrap{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+}
+
+.bank-row-value-wrap .bank-row-value{
+flex:1;
+}
+
+.copy-btn{
+background:rgba(255,255,255,.18);
+border:none;
+color:white;
+width:32px;
+height:32px;
+min-width:32px;
+border-radius:8px;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:13px;
+transition:.2s;
+}
+
+.copy-btn:hover{
+background:rgba(255,255,255,.32);
+}
+
+.copy-btn.copied{
+background:#4CAF50;
+}
+
 .stc-card{
 background:linear-gradient(135deg,#5B2C8D,#3D1D63);
 }
@@ -1897,12 +1932,18 @@ Complete your bank transfer to any account below, then send us your payment scre
 
 <div class="bank-row">
 <div class="bank-row-label">Account Number</div>
+<div class="bank-row-value-wrap">
 <div class="bank-row-value">1181817743</div>
+<button type="button" class="copy-btn" onclick="copyBankValue(this,'1181817743')" aria-label="Copy Account Number"><i class="fas fa-copy"></i></button>
+</div>
 </div>
 
 <div class="bank-row">
 <div class="bank-row-label">IBAN</div>
+<div class="bank-row-value-wrap">
 <div class="bank-row-value">SA8278000000001181817743</div>
+<button type="button" class="copy-btn" onclick="copyBankValue(this,'SA8278000000001181817743')" aria-label="Copy IBAN"><i class="fas fa-copy"></i></button>
+</div>
 </div>
 
 <label class="file-upload-label" for="stcProofFile">
@@ -1932,12 +1973,18 @@ Send Payment Proof
 
 <div class="bank-row">
 <div class="bank-row-label">Account Number</div>
+<div class="bank-row-value-wrap">
 <div class="bank-row-value">68207019922000</div>
+<button type="button" class="copy-btn" onclick="copyBankValue(this,'68207019922000')" aria-label="Copy Account Number"><i class="fas fa-copy"></i></button>
+</div>
 </div>
 
 <div class="bank-row">
 <div class="bank-row-label">IBAN</div>
+<div class="bank-row-value-wrap">
 <div class="bank-row-value">SA8205000068207019922000</div>
+<button type="button" class="copy-btn" onclick="copyBankValue(this,'SA8205000068207019922000')" aria-label="Copy IBAN"><i class="fas fa-copy"></i></button>
+</div>
 </div>
 
 <label class="file-upload-label" for="alinmaProofFile">
@@ -1967,12 +2014,18 @@ Send Payment Proof
 
 <div class="bank-row">
 <div class="bank-row-label">Account Number</div>
+<div class="bank-row-value-wrap">
 <div class="bank-row-value">0770080010006083599147</div>
+<button type="button" class="copy-btn" onclick="copyBankValue(this,'0770080010006083599147')" aria-label="Copy Account Number"><i class="fas fa-copy"></i></button>
+</div>
 </div>
 
 <div class="bank-row">
 <div class="bank-row-label">IBAN</div>
+<div class="bank-row-value-wrap">
 <div class="bank-row-value">SA11 8000 0867 6080 1359 9147</div>
+<button type="button" class="copy-btn" onclick="copyBankValue(this,'SA11 8000 0867 6080 1359 9147')" aria-label="Copy IBAN"><i class="fas fa-copy"></i></button>
+</div>
 </div>
 
 <div class="bank-row">
@@ -3501,6 +3554,40 @@ customCapturedLocationLink = "";
 customLocationStatus.textContent = "";
 
 });
+
+</script>
+
+<!-- ==================================== -->
+<!-- COPY TO CLIPBOARD -->
+<!-- ==================================== -->
+
+<script>
+
+function copyBankValue(btn, value){
+
+const icon = btn.querySelector("i");
+
+function showCopied(){
+icon.classList.remove("fa-copy");
+icon.classList.add("fa-check");
+btn.classList.add("copied");
+
+setTimeout(()=>{
+icon.classList.remove("fa-check");
+icon.classList.add("fa-copy");
+btn.classList.remove("copied");
+}, 1500);
+}
+
+if(navigator.clipboard && navigator.clipboard.writeText){
+navigator.clipboard.writeText(value).then(showCopied).catch(()=>{
+alert("Could not copy automatically. Please copy manually:\n\n" + value);
+});
+}else{
+alert("Could not copy automatically. Please copy manually:\n\n" + value);
+}
+
+}
 
 </script>
 
