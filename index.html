@@ -232,6 +232,16 @@ box-shadow:0 15px 25px rgba(76,175,80,.4);
 
 }
 
+.nav-toggle{
+display:none;
+background:none;
+border:none;
+font-size:24px;
+color:#2E7D32;
+cursor:pointer;
+padding:6px 10px;
+}
+
 /* HERO */
 
 .hero{
@@ -540,6 +550,56 @@ nav ul{
 
 display:none;
 
+position:absolute;
+
+top:100%;
+
+left:0;
+
+width:100%;
+
+flex-direction:column;
+
+gap:0;
+
+background:white;
+
+box-shadow:0 15px 25px rgba(0,0,0,.15);
+
+padding:10px 0;
+
+}
+
+nav ul.mobile-open{
+
+display:flex;
+
+}
+
+nav ul li{
+
+width:100%;
+
+}
+
+nav ul li a{
+
+display:block;
+
+padding:14px 8%;
+
+border-bottom:1px solid #f0f0f0;
+
+}
+
+.nav-toggle{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
 }
 
 nav{
@@ -749,13 +809,17 @@ color:#2E7D32;
 font-weight:600;
 }
 
-.spice-options{
+.spice-options,
+.days-options,
+.order-type-options{
 display:flex;
 gap:14px;
 flex-wrap:wrap;
 }
 
-.spice-options label{
+.spice-options label,
+.days-options label,
+.order-type-options label{
 display:flex;
 align-items:center;
 gap:6px;
@@ -770,13 +834,56 @@ font-size:14px;
 transition:.2s;
 }
 
-.spice-options input{
+.spice-options input,
+.days-options input,
+.order-type-options input{
 accent-color:#4CAF50;
 }
 
-.spice-options label:has(input:checked){
+.spice-options label:has(input:checked),
+.days-options label:has(input:checked),
+.order-type-options label:has(input:checked){
 border-color:#4CAF50;
 background:#eef6ea;
+}
+
+.modal-box select,
+.modal-box input[type="date"]{
+width:100%;
+padding:12px 14px;
+border:2px solid #e2ddc8;
+border-radius:10px;
+font-size:15px;
+font-family:inherit;
+outline:none;
+transition:.2s;
+background:white;
+}
+
+.modal-box select:focus,
+.modal-box input[type="date"]:focus{
+border-color:#4CAF50;
+}
+
+.order-note-banner{
+background:#FFF3E0;
+border:2px solid #FFB74D;
+border-radius:12px;
+padding:14px 16px;
+font-size:13.5px;
+color:#8A5300;
+line-height:1.6;
+margin-bottom:10px;
+}
+
+.custom-order-cta{
+max-width:750px;
+margin:0 auto;
+text-align:center;
+background:white;
+border-radius:22px;
+padding:50px 35px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .send-whatsapp-btn{
@@ -959,7 +1066,7 @@ KARACHI <span>JUMMA</span> BIRYANI
 
 </div>
 
-<ul>
+<ul id="navList">
 
 <li><a href="#home">Home</a></li>
 
@@ -975,12 +1082,15 @@ KARACHI <span>JUMMA</span> BIRYANI
 
 </ul>
 
-<a href="https://wa.me/966564241776?text=Hi%2C%20I%20am%20contacting%20you%20through%20your%20website.%20I%20am%20interested%20in%20Karachi%20Jumma%20Biryani.%20Please%20accept%20my%20order%20and%20let%20me%20know%20the%20next%20steps."
-   class="order-btn">
+<a href="#custom-order" class="order-btn">
 
-    Order Now
+    Custom Order
 
 </a>
+
+<button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+<i class="fas fa-bars"></i>
+</button>
 
 </nav>
 
@@ -1560,6 +1670,62 @@ A wholesome mix of fresh vegetables cooked in a simple, comforting home-style wa
 </div>
 
 </div>
+</div>
+
+</section>
+
+<!-- ====================================================== -->
+<!-- CUSTOM ORDER CTA -->
+<!-- ====================================================== -->
+
+<section id="custom-order">
+
+<h2 class="title" data-aos="fade-up">
+
+Create a Custom Order
+
+</h2>
+
+<p class="subtitle" data-aos="fade-up" data-aos-delay="100">
+
+Craving something specific? Pick from our menu or tell us your own recipe, choose one-time or repeating days, and set your preferred time.
+
+</p>
+
+<div class="custom-order-cta" data-aos="zoom-in">
+
+<div style="font-size:55px;color:#4CAF50;">
+
+<i class="fas fa-utensils"></i>
+
+</div>
+
+<h3 style="margin:20px 0 10px;color:#2E7D32;font-size:26px;">
+
+Build Your Own Order
+
+</h3>
+
+<p style="color:#666;margin-bottom:10px;">
+
+Choose any listed dish or your own recipe request, a one-time date or recurring days, and your preferred time range.
+
+</p>
+
+<p style="color:#c0392b;font-size:13.5px;font-weight:600;margin-bottom:25px;">
+
+⚠️ Custom orders require at least 1 day advance notice, or a minimum of 3-4 hours before your requested time.
+
+</p>
+
+<button type="button" class="subscribe-open-btn" onclick="openCustomOrderModal()">
+
+<i class="fab fa-whatsapp"></i>
+
+Start Custom Order
+
+</button>
+
 </div>
 
 </section>
@@ -2549,6 +2715,107 @@ Send via WhatsApp
 </div>
 
 <!-- ====================================== -->
+<!-- CUSTOM ORDER MODAL -->
+<!-- ====================================== -->
+
+<div id="customOrderModal" class="modal-overlay">
+
+<div class="modal-box">
+
+<button type="button" class="modal-close" onclick="closeCustomOrderModal()" aria-label="Close">&times;</button>
+
+<h3>Create Your Custom Order</h3>
+
+<div class="order-note-banner">
+
+⚠️ Custom orders require at least <b>1 day advance notice</b>, or a minimum of <b>3-4 hours before</b> your requested time, so we can prepare everything fresh.
+
+</div>
+
+<form id="customOrderForm">
+
+<label for="customRecipeSelect">Choose a Recipe *</label>
+<select id="customRecipeSelect" required>
+<option value="" disabled selected>Select a recipe</option>
+<option value="Karachi Chicken Biryani">Karachi Chicken Biryani</option>
+<option value="Chicken Desi Karahi">Chicken Desi Karahi</option>
+<option value="Chicken Qorma">Chicken Qorma</option>
+<option value="Chicken Achar Gosht">Chicken Achar Gosht</option>
+<option value="Chicken White Karahi">Chicken White Karahi</option>
+<option value="Dal Chawal">Dal Chawal</option>
+<option value="Kaadi Paakoda Chawal">Kaadi Paakoda Chawal</option>
+<option value="Bindi">Bindi</option>
+<option value="Torai">Torai</option>
+<option value="Gobi Aalu">Gobi Aalu</option>
+<option value="Shimla Aalu">Shimla Aalu</option>
+<option value="Bengan Ka Barta">Bengan Ka Barta</option>
+<option value="Shami Kabaab">Shami Kabaab</option>
+<option value="Aalu Kabaab">Aalu Kabaab</option>
+<option value="Chicken Paratha">Chicken Paratha</option>
+<option value="Aalu Paratha with Green Chutney">Aalu Paratha with Green Chutney</option>
+<option value="Chicken Chow Mein">Chicken Chow Mein</option>
+<option value="Chicken Macaroni">Chicken Macaroni</option>
+<option value="Mixed Sabzi">Mixed Sabzi</option>
+<option value="other">Other / My Own Recipe</option>
+</select>
+
+<input type="text" id="customRecipeOther" placeholder="Tell us your own recipe" style="display:none;margin-top:10px;">
+
+<label>Order Type *</label>
+<div class="order-type-options">
+<label><input type="radio" name="customOrderType" value="once" required> One-Time Order</label>
+<label><input type="radio" name="customOrderType" value="recurring"> Recurring / Repeat Order</label>
+</div>
+
+<div id="customOnceFields" style="display:none;">
+<label for="customOrderDate">Order Date *</label>
+<input type="date" id="customOrderDate">
+</div>
+
+<div id="customRecurringFields" style="display:none;">
+<label>Repeat On These Days *</label>
+<div class="days-options">
+<label><input type="checkbox" name="customDays" value="Saturday"> Saturday</label>
+<label><input type="checkbox" name="customDays" value="Sunday"> Sunday</label>
+<label><input type="checkbox" name="customDays" value="Monday"> Monday</label>
+<label><input type="checkbox" name="customDays" value="Tuesday"> Tuesday</label>
+<label><input type="checkbox" name="customDays" value="Wednesday"> Wednesday</label>
+<label><input type="checkbox" name="customDays" value="Thursday"> Thursday</label>
+</div>
+</div>
+
+<label>Preferred Time Range *</label>
+<div class="time-range">
+<input type="time" id="customTimeFrom" required>
+<span>to</span>
+<input type="time" id="customTimeTo" required>
+</div>
+
+<label for="customFullName">Full Name *</label>
+<input type="text" id="customFullName" required placeholder="Your full name">
+
+<label for="customPhone">WhatsApp Number *</label>
+<input type="tel" id="customPhone" required placeholder="e.g. 966564241776">
+
+<label>Current Location (optional)</label>
+<button type="button" id="customCaptureLocationBtn" onclick="captureCustomLocation()">
+<i class="fas fa-location-dot"></i>
+Capture My Location
+</button>
+<div id="customLocationStatus"></div>
+
+<button type="submit" class="send-whatsapp-btn">
+<i class="fab fa-whatsapp"></i>
+Send via WhatsApp
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- ====================================== -->
 <!-- SCROLL TO TOP BUTTON -->
 <!-- ====================================== -->
 
@@ -2600,6 +2867,31 @@ once:true,
 
 offset:80
 
+});
+
+// ==============================
+// Mobile Nav Toggle
+// ==============================
+
+const navToggle = document.getElementById("navToggle");
+const navList = document.getElementById("navList");
+const navToggleIcon = navToggle.querySelector("i");
+
+navToggle.addEventListener("click", ()=>{
+
+const isOpen = navList.classList.toggle("mobile-open");
+
+navToggleIcon.classList.toggle("fa-bars", !isOpen);
+navToggleIcon.classList.toggle("fa-xmark", isOpen);
+
+});
+
+navList.querySelectorAll("a").forEach((link)=>{
+link.addEventListener("click", ()=>{
+navList.classList.remove("mobile-open");
+navToggleIcon.classList.add("fa-bars");
+navToggleIcon.classList.remove("fa-xmark");
+});
 });
 
 // ==============================
@@ -3037,6 +3329,176 @@ closeFridayModal();
 fridayForm.reset();
 fridayCapturedLocationLink = "";
 fridayLocationStatus.textContent = "";
+
+});
+
+</script>
+
+<!-- ==================================== -->
+<!-- CUSTOM ORDER MODAL LOGIC -->
+<!-- ==================================== -->
+
+<script>
+
+const customOrderModal = document.getElementById("customOrderModal");
+const customOrderForm = document.getElementById("customOrderForm");
+const customLocationStatus = document.getElementById("customLocationStatus");
+const customCaptureLocationBtn = document.getElementById("customCaptureLocationBtn");
+const customRecipeSelect = document.getElementById("customRecipeSelect");
+const customRecipeOther = document.getElementById("customRecipeOther");
+const customOnceFields = document.getElementById("customOnceFields");
+const customRecurringFields = document.getElementById("customRecurringFields");
+const customOrderDate = document.getElementById("customOrderDate");
+
+let customCapturedLocationLink = "";
+
+function openCustomOrderModal(){
+customOrderModal.classList.add("active");
+document.body.style.overflow = "hidden";
+}
+
+function closeCustomOrderModal(){
+customOrderModal.classList.remove("active");
+document.body.style.overflow = "";
+}
+
+customOrderModal.addEventListener("click", (e)=>{
+if(e.target === customOrderModal){
+closeCustomOrderModal();
+}
+});
+
+document.addEventListener("keydown", (e)=>{
+if(e.key === "Escape" && customOrderModal.classList.contains("active")){
+closeCustomOrderModal();
+}
+});
+
+customRecipeSelect.addEventListener("change", ()=>{
+customRecipeOther.style.display = customRecipeSelect.value === "other" ? "block" : "none";
+});
+
+document.querySelectorAll('input[name="customOrderType"]').forEach((radio)=>{
+radio.addEventListener("change", ()=>{
+if(radio.value === "once" && radio.checked){
+customOnceFields.style.display = "block";
+customRecurringFields.style.display = "none";
+customOrderDate.required = true;
+}else if(radio.value === "recurring" && radio.checked){
+customRecurringFields.style.display = "block";
+customOnceFields.style.display = "none";
+customOrderDate.required = false;
+}
+});
+});
+
+function captureCustomLocation(){
+
+if(!navigator.geolocation){
+customLocationStatus.textContent = "⚠️ Geolocation is not supported by your browser.";
+return;
+}
+
+customCaptureLocationBtn.disabled = true;
+customLocationStatus.textContent = "📡 Fetching your current location...";
+
+navigator.geolocation.getCurrentPosition(
+(position)=>{
+
+const lat = position.coords.latitude.toFixed(6);
+const lng = position.coords.longitude.toFixed(6);
+
+customCapturedLocationLink = "https://www.google.com/maps?q=" + lat + "," + lng;
+
+customLocationStatus.innerHTML = "✅ Location captured — <a href=\"" + customCapturedLocationLink + "\" target=\"_blank\">view on Google Maps</a>";
+
+customCaptureLocationBtn.disabled = false;
+
+},
+(error)=>{
+
+customCapturedLocationLink = "";
+customLocationStatus.textContent = "⚠️ Could not get your location (" + error.message + "). You can still submit without it.";
+customCaptureLocationBtn.disabled = false;
+
+},
+{ enableHighAccuracy:true, timeout:10000, maximumAge:0 }
+);
+}
+
+customOrderForm.addEventListener("submit", (e)=>{
+
+e.preventDefault();
+
+const recipeValue = customRecipeSelect.value;
+const recipeOtherValue = customRecipeOther.value.trim();
+const orderTypeEl = document.querySelector('input[name="customOrderType"]:checked');
+const timeFrom = document.getElementById("customTimeFrom").value;
+const timeTo = document.getElementById("customTimeTo").value;
+const fullName = document.getElementById("customFullName").value.trim();
+const phone = document.getElementById("customPhone").value.trim();
+
+if(!recipeValue || (recipeValue === "other" && !recipeOtherValue)){
+alert("Please choose a recipe or tell us your own recipe.");
+return;
+}
+
+if(!orderTypeEl){
+alert("Please select an order type: One-Time or Recurring.");
+return;
+}
+
+const orderDate = customOrderDate.value;
+const checkedDays = Array.from(document.querySelectorAll('input[name="customDays"]:checked')).map(el => el.value);
+
+if(orderTypeEl.value === "once" && !orderDate){
+alert("Please select your order date.");
+return;
+}
+
+if(orderTypeEl.value === "recurring" && !checkedDays.length){
+alert("Please select at least one day for your recurring order.");
+return;
+}
+
+if(!timeFrom || !timeTo || !fullName || !phone){
+alert("Please fill all required fields: Time Range, Full Name and WhatsApp Number.");
+return;
+}
+
+const recipeLabel = recipeValue === "other" ? recipeOtherValue : recipeValue;
+
+let message = "Hi, I would like to place a Custom Order.\n\n";
+message += "Recipe: " + recipeLabel + "\n";
+message += "Order Type: " + (orderTypeEl.value === "once" ? "One-Time" : "Recurring / Repeat") + "\n";
+
+if(orderTypeEl.value === "once"){
+message += "Order Date: " + orderDate + "\n";
+}else{
+message += "Repeat Days: " + checkedDays.join(", ") + "\n";
+}
+
+message += "Preferred Time: " + formatTimeLabel(timeFrom) + " to " + formatTimeLabel(timeTo) + "\n";
+message += "Full Name: " + fullName + "\n";
+message += "WhatsApp Number: " + phone + "\n";
+
+if(customCapturedLocationLink){
+message += "My Location: " + customCapturedLocationLink + "\n";
+}
+
+message += "\nNote: I understand custom orders require at least 1 day advance notice, or a minimum of 3-4 hours before the requested time.\n\nPlease confirm my custom order.";
+
+const waUrl = "https://wa.me/966564241776?text=" + encodeURIComponent(message);
+
+window.open(waUrl, "_blank");
+
+closeCustomOrderModal();
+customOrderForm.reset();
+customRecipeOther.style.display = "none";
+customOnceFields.style.display = "none";
+customRecurringFields.style.display = "none";
+customCapturedLocationLink = "";
+customLocationStatus.textContent = "";
 
 });
 
