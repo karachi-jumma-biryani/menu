@@ -162,19 +162,21 @@ box-shadow:0 5px 20px rgba(0,0,0,.1);
 
 .logo{
 
-font-size:30px;
+display:flex;
 
-font-weight:800;
-
-color:#2E7D32;
-
-letter-spacing:1px;
+align-items:center;
 
 }
 
-.logo span{
+.logo img{
 
-color:#8D6E63;
+height:76px;
+
+width:auto;
+
+max-width:100%;
+
+display:block;
 
 }
 
@@ -612,21 +614,17 @@ gap:10px;
 
 .logo{
 
-font-size:clamp(12px,3.8vw,17px);
-
-line-height:1.25;
-
-letter-spacing:.2px;
-
-white-space:nowrap;
-
-overflow:hidden;
-
-text-overflow:ellipsis;
-
 flex:1;
 
 min-width:0;
+
+}
+
+.logo img{
+
+height:46px;
+
+max-width:100%;
 
 }
 
@@ -1097,7 +1095,7 @@ margin-top:18px;
 
 <div class="logo">
 
-KARACHI <span>JUMMA</span> BIRYANI
+<img src="./images/logo.png" alt="Karachi Jumma Biryani logo">
 
 </div>
 
