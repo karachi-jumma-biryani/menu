@@ -1,0 +1,37 @@
+title: Karachi Jumma Biryani
+description: >-
+  Authentic homemade Karachi-style Chicken Biryani every Friday in Al Khobar,
+  Saudi Arabia, plus a 6-day monthly homemade dinner subscription.
+url: "https://kjbiryani.com"
+baseurl: ""
+
+author: Karachi Jumma Biryani
+timezone: Asia/Riyadh
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+permalink: /blog/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: blog/feed.xml
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - oauth-worker
+  - README.md
+  - node_modules
+  - vendor

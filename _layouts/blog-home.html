@@ -1,0 +1,23 @@
+---
+layout: blog-base
+---
+<div class="blog-list-header">
+<h1>{{ page.title | default: "Our Blog" }}</h1>
+<p>{{ page.description | default: "Recipes, stories and updates from Karachi Jumma Biryani." }}</p>
+</div>
+
+<div class="blog-list-grid">
+{% for post in site.posts %}
+<a class="blog-card" href="{{ post.url | relative_url }}">
+{% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.title }}">{% endif %}
+<div class="blog-card-content">
+{% if post.category %}<span class="blog-badge" style="margin-bottom:8px;">{{ post.category }}</span>{% endif %}
+<h3 style="margin-top:8px;">{{ post.title }}</h3>
+<p>{{ post.description | truncate: 100 }}</p>
+<p style="margin-top:8px;color:#999;font-size:12px;">
+{{ post.date | date: "%B %-d, %Y" }} · {{ post.content | number_of_words | divided_by: 200 | at_least: 1 }} min read
+</p>
+</div>
+</a>
+{% endfor %}
+</div>
