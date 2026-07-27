@@ -1,0 +1,44 @@
+backend:
+  name: github
+  repo: karachi-jumma-biryani/menu
+  branch: main
+  # TODO: replace with your deployed Cloudflare Worker URL (see oauth-worker/README.md)
+  base_url: https://REPLACE-WITH-YOUR-WORKER-URL.workers.dev
+  auth_endpoint: auth
+
+publish_mode: editorial_workflow
+
+media_folder: images/blog
+public_folder: /images/blog
+
+site_url: https://kjbiryani.com
+display_url: https://kjbiryani.com
+
+collections:
+  - name: posts
+    label: Blog Posts
+    folder: _posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text, hint: "Shown in Google results and social shares." }
+      - { label: Published Date, name: date, widget: datetime }
+      - { label: Featured Image, name: image, widget: image, media_folder: "/images/blog", public_folder: "/images/blog" }
+      - label: Gallery
+        name: gallery
+        widget: list
+        required: false
+        field: { label: Image, name: image, widget: image, media_folder: "/images/blog", public_folder: "/images/blog" }
+      - { label: Author, name: author, widget: string, default: "Karachi Jumma Biryani" }
+      - { label: Category, name: category, widget: string, hint: "e.g. Recipes, Announcements, Behind the Scenes" }
+      - { label: Tags, name: tags, widget: list, default: [] }
+      - label: FAQ
+        name: faq
+        widget: list
+        required: false
+        fields:
+          - { label: Question, name: question, widget: string }
+          - { label: Answer, name: answer, widget: text }
+      - { label: Body, name: body, widget: markdown }
