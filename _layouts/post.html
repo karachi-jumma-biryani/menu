@@ -16,10 +16,10 @@ layout: blog-base
 <h1 class="blog-title">{{ page.title }}</h1>
 
 <div class="blog-meta">
-<span><i class="fas fa-user"></i> {{ page.author | default: site.author }}</span>
-<span><i class="fas fa-calendar"></i> {{ page.date | date: "%B %-d, %Y" }}</span>
-{% if page.last_modified_at %}<span><i class="fas fa-pen"></i> Updated {{ page.last_modified_at | date: "%B %-d, %Y" }}</span>{% endif %}
-<span><i class="fas fa-clock"></i> {{ content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
+<span><svg class="icon" aria-hidden="true"><use href="#icon-user"></use></svg> {{ page.author | default: site.author }}</span>
+<span><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg> {{ page.date | date: "%B %-d, %Y" }}</span>
+{% if page.last_modified_at %}<span><svg class="icon" aria-hidden="true"><use href="#icon-pen"></use></svg> Updated {{ page.last_modified_at | date: "%B %-d, %Y" }}</span>{% endif %}
+<span><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> {{ content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
 </div>
 
 <div class="blog-content">
