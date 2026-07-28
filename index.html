@@ -22,6 +22,7 @@ content="Karachi Biryani Al Khobar, Karachi Jumma Biryani, Friday Biryani Saudi 
 <meta name="geo.placename" content="Al Khobar, Saudi Arabia">
 <meta name="geo.position" content="26.2172;50.1971">
 <meta name="ICBM" content="26.2172, 50.1971">
+<meta name="google-site-verification" content="zPfXN7AWjllNS9qZpvxcaW4vWotYHE3h4oMRgS0yico" />
 <link rel="canonical" href="https://kjbiryani.com/">
 
 <!-- Favicons -->
@@ -645,21 +646,9 @@ z-index:999;
 
 }
 
-/* Mobile */
+/* Tablet / small laptop: collapse nav into hamburger before items get cramped */
 
-@media(max-width:768px){
-
-.hero h1{
-
-font-size:42px;
-
-}
-
-.hero p{
-
-font-size:17px;
-
-}
+@media(max-width:1100px){
 
 nav ul{
 
@@ -719,9 +708,33 @@ justify-content:center;
 
 nav{
 
-padding:10px 4%;
+padding:14px 5%;
 
 gap:10px;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+nav{
+
+padding:10px 4%;
 
 }
 

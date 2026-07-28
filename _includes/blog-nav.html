@@ -6,11 +6,13 @@
 </a>
 </div>
 
-<ul>
+<ul id="navList">
 <li><a href="{{ '/' | relative_url }}">Home</a></li>
 <li><a href="{{ '/#friday' | relative_url }}">Friday Special</a></li>
 <li><a href="{{ '/#monthly' | relative_url }}">Monthly Menu</a></li>
 <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+<li><a href="{{ '/#payment' | relative_url }}">Payment</a></li>
+<li><a href="{{ '/#gallery' | relative_url }}">Gallery</a></li>
 <li><a href="{{ '/#contact' | relative_url }}">Contact</a></li>
 </ul>
 
@@ -18,5 +20,9 @@
    class="order-btn" target="_blank">
 Order on WhatsApp
 </a>
+
+<button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+<i class="fas fa-bars"></i>
+</button>
 
 </nav>
