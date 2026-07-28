@@ -5,7 +5,7 @@ compatibility_date = "2026-07-27"
 # Public GitHub OAuth App Client ID (safe to commit — it's not secret).
 # Set this after creating the OAuth App at https://github.com/settings/developers
 [vars]
-GITHUB_CLIENT_ID = "REPLACE_WITH_YOUR_OAUTH_APP_CLIENT_ID"
+GITHUB_CLIENT_ID = "Ov23liV4qBjVFvPNrmPd"
 
 # The matching Client Secret must NOT go here — set it after deploying with:
 #   wrangler secret put GITHUB_CLIENT_SECRET
