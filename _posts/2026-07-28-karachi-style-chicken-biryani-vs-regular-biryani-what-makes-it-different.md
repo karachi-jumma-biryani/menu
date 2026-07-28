@@ -1,5 +1,6 @@
 ---
 title: "Karachi-Style Chicken Biryani vs Regular Biryani: What Makes It Different?"
+seo_title: "Karachi vs Regular Biryani"
 description: >
   Discover what makes Karachi-style chicken biryani unique — the masala blend,
   slow-cooked chicken, and layering technique — plus where to find it homemade

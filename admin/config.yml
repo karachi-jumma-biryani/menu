@@ -22,6 +22,7 @@ collections:
     format: frontmatter
     fields:
       - { label: Title, name: title, widget: string }
+      - { label: SEO Title, name: seo_title, widget: string, required: false, hint: "Optional shorter title for search results/social if the title above is long. Keep under ~35 characters." }
       - { label: Description, name: description, widget: text, hint: "Shown in Google results and social shares." }
       - { label: Published Date, name: date, widget: datetime }
       - { label: Featured Image, name: image, widget: image, media_folder: "/images/blog", public_folder: "/images/blog" }

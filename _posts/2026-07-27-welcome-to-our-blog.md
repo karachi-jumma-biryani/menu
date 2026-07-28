@@ -1,5 +1,6 @@
 ---
 title: "Welcome to the Karachi Jumma Biryani Blog"
+seo_title: "Welcome to Our Blog"
 description: "We're sharing recipes, behind-the-scenes stories, and updates about our homemade Karachi-style biryani and monthly dinner service in Al Khobar."
 image: /images/chick-biryani.jpg
 gallery:
