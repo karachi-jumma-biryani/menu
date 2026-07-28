@@ -52,11 +52,10 @@ layout: blog-base
 </div>
 {% endif %}
 
-{% assign related = site.posts | where_exp: "post", "post.url != page.url" %}
-{% if page.category %}
-{% assign related = related | where: "category", page.category %}
-{% endif %}
-{% assign related = related | limit: 3 %}
+{% assign other_posts = site.posts | where_exp: "post", "post.url != page.url" %}
+{% assign same_category = other_posts | where: "category", page.category %}
+{% assign other_category = other_posts | where_exp: "post", "post.category != page.category" %}
+{% assign related = same_category | concat: other_category | limit: 3 %}
 
 {% if related.size > 0 %}
 <div class="blog-related">
