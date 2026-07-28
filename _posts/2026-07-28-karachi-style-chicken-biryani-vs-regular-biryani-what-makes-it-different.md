@@ -3,8 +3,7 @@ title: "Karachi-Style Chicken Biryani vs Regular Biryani: What Makes It Differen
 seo_title: "Karachi vs Regular Biryani"
 description: >
   Discover what makes Karachi-style chicken biryani unique — the masala blend,
-  slow-cooked chicken, and layering technique — plus where to find it homemade
-  in Al Khobar, Saudi Arabia.
+  slow-cooked chicken, and layering technique, homemade in Al Khobar.
 date: 2026-07-28T09:55:00.000+03:00
 image: /images/blog/biryani.jpeg
 author: Karachi Jumma Biryani
