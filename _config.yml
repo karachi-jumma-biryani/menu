@@ -20,6 +20,10 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: "admin"
+    values:
+      sitemap: false
 
 plugins:
   - jekyll-sitemap
