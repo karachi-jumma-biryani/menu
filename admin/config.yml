@@ -2,8 +2,7 @@ backend:
   name: github
   repo: karachi-jumma-biryani/menu
   branch: main
-  # TODO: replace with your deployed Cloudflare Worker URL (see oauth-worker/README.md)
-  base_url: https://REPLACE-WITH-YOUR-WORKER-URL.workers.dev
+  base_url: https://kjbiryani-oauth.karachijummabiryani.workers.dev
   auth_endpoint: auth
 
 publish_mode: editorial_workflow
