@@ -57,8 +57,10 @@ content="Authentic homemade Karachi-style Chicken Biryani every Friday, plus a 6
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preload" as="image" fetchpriority="high"
-href="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1800&q=45">
+<link rel="preload" as="image" fetchpriority="high" media="(max-width:768px)"
+href="https://images.unsplash.com/photo-1589302168068-964664d93dc0?fm=webp&fit=crop&w=860&q=42">
+<link rel="preload" as="image" fetchpriority="high" media="(min-width:769px)"
+href="https://images.unsplash.com/photo-1589302168068-964664d93dc0?fm=webp&fit=crop&w=1800&q=40">
 
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -384,7 +386,7 @@ background:
 
 linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
 
-url("https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1800&q=45");
+url("https://images.unsplash.com/photo-1589302168068-964664d93dc0?fm=webp&fit=crop&w=1800&q=40");
 
 background-size:cover;
 
@@ -394,6 +396,16 @@ color:white;
 
 text-align:center;
 
+}
+
+@media(max-width:768px){
+.hero{
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1589302168068-964664d93dc0?fm=webp&fit=crop&w=860&q=42");
+background-size:cover;
+background-position:center;
+}
 }
 
 .hero-content{
@@ -761,6 +773,18 @@ height:46px;
 max-width:100%;
 
 object-fit:contain;
+
+}
+
+#parallaxCta{
+
+background-image:
+
+linear-gradient(rgba(46,125,50,.8),rgba(46,125,50,.8)),
+
+url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=50') !important;
+
+background-attachment:scroll !important;
 
 }
 
@@ -1253,8 +1277,8 @@ margin-top:18px;
 <div class="logo">
 
 <picture>
-<source srcset="./images/logo.webp" type="image/webp">
-<img src="./images/logo.png" alt="Karachi Jumma Biryani logo" width="826" height="152" fetchpriority="high">
+<source srcset="./images/logo-sm.webp 1x, ./images/logo.webp 2x" type="image/webp">
+<img src="./images/logo.png" srcset="./images/logo-sm.png 1x, ./images/logo.png 2x" alt="Karachi Jumma Biryani logo" width="826" height="152" fetchpriority="high">
 </picture>
 
 </div>
@@ -1378,7 +1402,13 @@ Every grain of rice is infused with traditional spices, tender chicken, potatoes
 
 <div class="card" data-aos="fade-up" data-aos-delay="150">
 
-<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=722&h=480&q=55" alt="Fresh premium ingredients used in Karachi Jumma Biryani recipes" loading="lazy" width="722" height="480">
+<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=760&h=480&q=55"
+srcset="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=328&h=240&q=60 328w,
+https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=380&h=240&q=60 380w,
+https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=656&h=480&q=55 656w,
+https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=760&h=480&q=55 760w"
+sizes="(max-width:768px) 328px, 380px"
+alt="Fresh premium ingredients used in Karachi Jumma Biryani recipes" loading="lazy" width="722" height="480">
 
 <div class="card-content">
 
@@ -1401,8 +1431,8 @@ Fresh vegetables, premium basmati rice, halal meat, aromatic herbs and hand-sele
 <div class="card" data-aos="fade-up" data-aos-delay="300">
 
 <picture>
-<source srcset="./images/card-family.webp" type="image/webp">
-<img src="./images/card-family.jpg" alt="Family enjoying a homemade Karachi Jumma Biryani meal together" loading="lazy" width="840" height="480">
+<source srcset="./images/card-family-sm.webp 1x, ./images/card-family.webp 2x" type="image/webp">
+<img src="./images/card-family.jpg" srcset="./images/card-family-sm.jpg 1x, ./images/card-family.jpg 2x" alt="Family enjoying a homemade Karachi Jumma Biryani meal together" loading="lazy" width="840" height="480">
 </picture>
 
 <div class="card-content">
@@ -1450,8 +1480,8 @@ Freshly cooked every Friday. Limited quantity. Pre-order before Thursday evening
 <div class="card" data-aos="zoom-in">
 
 <picture>
-<source srcset="./images/chick-biryani.webp" type="image/webp">
-<img src="./images/chick-biryani.jpg" alt="Karachi Chicken Biryani with basmati rice, potato and homemade masala" loading="lazy" width="900" height="514">
+<source srcset="./images/chick-biryani.webp 900w, ./images/chick-biryani-lg.webp 1400w" sizes="(max-width:768px) 328px, 1200px" type="image/webp">
+<img src="./images/chick-biryani.jpg" srcset="./images/chick-biryani.jpg 900w, ./images/chick-biryani-lg.jpg 1400w" sizes="(max-width:768px) 328px, 1200px" alt="Karachi Chicken Biryani with basmati rice, potato and homemade masala" loading="lazy" width="900" height="514">
 </picture>
 
 <div class="card-content">
@@ -1608,13 +1638,13 @@ Simply message us on WhatsApp and your delicious homemade meal will be prepared 
 <!-- PARALLAX CTA -->
 <!-- ========================= -->
 
-<section style="
+<section id="parallaxCta" style="
 
 background:
 
 linear-gradient(rgba(46,125,50,.8),rgba(46,125,50,.8)),
 
-url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=80');
+url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=60');
 
 background-size:cover;
 
