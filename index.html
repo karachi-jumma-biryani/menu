@@ -58,13 +58,13 @@ content="Authentic homemade Karachi-style Chicken Biryani every Friday, plus a 6
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link rel="preload" as="image" fetchpriority="high"
-href="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1800&q=60">
+href="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1800&q=45">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" as="style" href="https://unpkg.com/aos@2.3.4/dist/aos.css" onload="this.onload=null;this.rel='stylesheet'">
 <noscript>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </noscript>
@@ -284,6 +284,8 @@ display:flex;
 
 align-items:center;
 
+flex-shrink:0;
+
 }
 
 .logo img{
@@ -295,6 +297,8 @@ width:auto;
 max-width:100%;
 
 display:block;
+
+object-fit:contain;
 
 }
 
@@ -328,7 +332,7 @@ color:#2E7D32;
 
 .order-btn{
 
-background:#4CAF50;
+background:#2E7D32;
 
 padding:12px 24px;
 
@@ -380,7 +384,7 @@ background:
 
 linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
 
-url("https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1800&q=60");
+url("https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1800&q=45");
 
 background-size:cover;
 
@@ -454,7 +458,7 @@ transition:.35s;
 
 .primary{
 
-background:#4CAF50;
+background:#2E7D32;
 
 color:white;
 
@@ -472,13 +476,13 @@ box-shadow:0 15px 35px rgba(76,175,80,.5);
 
 background:white;
 
-color:#4CAF50;
+color:#2E7D32;
 
 }
 
 .secondary:hover{
 
-background:#4CAF50;
+background:#2E7D32;
 
 color:white;
 
@@ -580,7 +584,7 @@ font-size:28px;
 
 font-weight:800;
 
-color:#4CAF50;
+color:#2E7D32;
 
 margin-top:18px;
 
@@ -756,6 +760,8 @@ height:46px;
 
 max-width:100%;
 
+object-fit:contain;
+
 }
 
 .order-btn{
@@ -921,7 +927,7 @@ transition:.2s;
 }
 
 #captureLocationBtn:hover{
-background:#4CAF50;
+background:#2E7D32;
 color:white;
 }
 
@@ -1174,7 +1180,7 @@ background:rgba(255,255,255,.32);
 }
 
 .copy-btn.copied{
-background:#4CAF50;
+background:#2E7D32;
 }
 
 .stc-card{
@@ -1372,7 +1378,7 @@ Every grain of rice is infused with traditional spices, tender chicken, potatoes
 
 <div class="card" data-aos="fade-up" data-aos-delay="150">
 
-<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=720&q=65" alt="Fresh premium ingredients used in Karachi Jumma Biryani recipes" loading="lazy" width="720" height="480">
+<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=722&h=480&q=55" alt="Fresh premium ingredients used in Karachi Jumma Biryani recipes" loading="lazy" width="722" height="480">
 
 <div class="card-content">
 
@@ -1396,7 +1402,7 @@ Fresh vegetables, premium basmati rice, halal meat, aromatic herbs and hand-sele
 
 <picture>
 <source srcset="./images/card-family.webp" type="image/webp">
-<img src="./images/card-family.jpg" alt="Family enjoying a homemade Karachi Jumma Biryani meal together" loading="lazy" width="900" height="514">
+<img src="./images/card-family.jpg" alt="Family enjoying a homemade Karachi Jumma Biryani meal together" loading="lazy" width="840" height="480">
 </picture>
 
 <div class="card-content">
@@ -1532,7 +1538,7 @@ Fresh ingredients. Homemade recipes. Authentic taste.
 
 <div class="card-content" style="text-align:center;">
 
-<div style="font-size:60px;color:#4CAF50;">
+<div style="font-size:60px;color:#2E7D32;">
 
 <i class="material-icons">restaurant</i>
 
@@ -1554,7 +1560,7 @@ Prepared using traditional Karachi family recipes that have been loved for gener
 
 <div class="card-content" style="text-align:center;">
 
-<div style="font-size:60px;color:#4CAF50;">
+<div style="font-size:60px;color:#2E7D32;">
 
 <i class="material-icons">eco</i>
 
@@ -1576,7 +1582,7 @@ Only premium vegetables, halal meat, aromatic rice and fresh spices are used eve
 
 <div class="card-content" style="text-align:center;">
 
-<div style="font-size:60px;color:#4CAF50;">
+<div style="font-size:60px;color:#2E7D32;">
 
 <i class="material-icons">delivery_dining</i>
 
@@ -1894,7 +1900,7 @@ Craving something specific? Pick from our menu or tell us your own recipe, choos
 
 <div class="custom-order-cta" data-aos="zoom-in">
 
-<div style="font-size:55px;color:#4CAF50;">
+<div style="font-size:55px;color:#2E7D32;">
 
 <svg class="icon" aria-hidden="true"><use href="#icon-utensils"></use></svg>
 
@@ -1964,7 +1970,7 @@ style="text-align:center;">
 
 style="font-size:20px;
 font-weight:bold;
-color:#4CAF50;">
+color:#2E7D32;">
 
 ⭐ MOST POPULAR ⭐
 
@@ -1999,7 +2005,7 @@ Prepared Daily
 style="font-size:55px;
 font-weight:bold;
 margin:30px 0;
-color:#4CAF50;">
+color:#2E7D32;">
 
 SAR. 700
 
@@ -2234,7 +2240,7 @@ Your payment screenshot is uploaded securely and a private link is sent with you
 
 <div class="card-content" style="text-align:center;">
 
-<p style="font-size:60px;color:#4CAF50;font-weight:800;">
+<p style="font-size:60px;color:#2E7D32;font-weight:800;">
 
 100%
 
@@ -2250,7 +2256,7 @@ Your payment screenshot is uploaded securely and a private link is sent with you
 
 <div class="card-content" style="text-align:center;">
 
-<p style="font-size:60px;color:#4CAF50;font-weight:800;">
+<p style="font-size:60px;color:#2E7D32;font-weight:800;">
 
 6
 
@@ -2266,7 +2272,7 @@ Your payment screenshot is uploaded securely and a private link is sent with you
 
 <div class="card-content" style="text-align:center;">
 
-<p style="font-size:60px;color:#4CAF50;font-weight:800;">
+<p style="font-size:60px;color:#2E7D32;font-weight:800;">
 
 Every
 
@@ -2282,7 +2288,7 @@ Every
 
 <div class="card-content" style="text-align:center;">
 
-<p style="font-size:60px;color:#4CAF50;font-weight:800;">
+<p style="font-size:60px;color:#2E7D32;font-weight:800;">
 
 Fresh
 
@@ -3049,7 +3055,7 @@ width:55px;
 height:55px;
 border:none;
 border-radius:50%;
-background:#4CAF50;
+background:#2E7D32;
 color:white;
 font-size:22px;
 cursor:pointer;
