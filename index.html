@@ -57,12 +57,17 @@ content="Authentic homemade Karachi-style Chicken Biryani every Friday, plus a 6
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link rel="preload" as="image" fetchpriority="high"
+href="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1800&q=60">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
+<link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" as="style" href="https://unpkg.com/aos@2.3.4/dist/aos.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</noscript>
 
 <script type="application/ld+json">
 {
@@ -317,7 +322,7 @@ transition:.3s;
 
 nav ul li a:hover{
 
-color:#4CAF50;
+color:#2E7D32;
 
 }
 
@@ -375,7 +380,7 @@ background:
 
 linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
 
-url("https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1800&q=80");
+url("https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1800&q=60");
 
 background-size:cover;
 
@@ -505,7 +510,7 @@ font-weight:800;
 
 text-align:center;
 
-color:#777;
+color:#5c5c5c;
 
 margin-bottom:70px;
 
@@ -1241,7 +1246,10 @@ margin-top:18px;
 
 <div class="logo">
 
-<img src="./images/logo.png" alt="Karachi Jumma Biryani logo">
+<picture>
+<source srcset="./images/logo.webp" type="image/webp">
+<img src="./images/logo.png" alt="Karachi Jumma Biryani logo" width="826" height="152" fetchpriority="high">
+</picture>
 
 </div>
 
@@ -1274,6 +1282,8 @@ margin-top:18px;
 </button>
 
 </nav>
+
+<main>
 
 <section class="hero" id="home">
 
@@ -1337,7 +1347,10 @@ We believe homemade food brings families together. Every meal is cooked fresh us
 
 <div class="card" data-aos="fade-up">
 
-<img src="./images/b-2.jpg" alt="Homemade Karachi biryani cooked with authentic spices" loading="lazy">
+<picture>
+<source srcset="./images/b-2.webp" type="image/webp">
+<img src="./images/b-2.jpg" alt="Homemade Karachi biryani cooked with authentic spices" loading="lazy" width="569" height="240">
+</picture>
 
 <div class="card-content">
 
@@ -1359,7 +1372,7 @@ Every grain of rice is infused with traditional spices, tender chicken, potatoes
 
 <div class="card" data-aos="fade-up" data-aos-delay="150">
 
-<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80" alt="Fresh premium ingredients used in Karachi Jumma Biryani recipes" loading="lazy">
+<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=720&q=65" alt="Fresh premium ingredients used in Karachi Jumma Biryani recipes" loading="lazy" width="720" height="480">
 
 <div class="card-content">
 
@@ -1381,7 +1394,10 @@ Fresh vegetables, premium basmati rice, halal meat, aromatic herbs and hand-sele
 
 <div class="card" data-aos="fade-up" data-aos-delay="300">
 
-<img src="./images/card-family.jpg" alt="Family enjoying a homemade Karachi Jumma Biryani meal together" loading="lazy">
+<picture>
+<source srcset="./images/card-family.webp" type="image/webp">
+<img src="./images/card-family.jpg" alt="Family enjoying a homemade Karachi Jumma Biryani meal together" loading="lazy" width="900" height="514">
+</picture>
 
 <div class="card-content">
 
@@ -1427,7 +1443,10 @@ Freshly cooked every Friday. Limited quantity. Pre-order before Thursday evening
 
 <div class="card" data-aos="zoom-in">
 
-<img src="./images/chick-biryani.jpg" alt="Karachi Chicken Biryani with basmati rice, potato and homemade masala" loading="lazy">
+<picture>
+<source srcset="./images/chick-biryani.webp" type="image/webp">
+<img src="./images/chick-biryani.jpg" alt="Karachi Chicken Biryani with basmati rice, potato and homemade masala" loading="lazy" width="900" height="514">
+</picture>
 
 <div class="card-content">
 
@@ -1670,7 +1689,7 @@ Perfect for busy professionals, students and families.
 
 <div class="card" data-aos="fade-up">
 
-<img class="menu-card-img" src="./images/chicken-karahi.jpg" alt="Saturday chicken karahi with chapati and salad" loading="lazy">
+<img class="menu-card-img" src="./images/chicken-karahi.jpg" alt="Saturday chicken karahi with chapati and salad" width="400" height="240" loading="lazy">
 
 <div class="card-content">
 
@@ -1701,7 +1720,7 @@ Fresh chicken dishes cooked with rich Pakistani spices and served with chapati a
 
 <div class="card" data-aos="fade-up" data-aos-delay="100">
 
-<img class="menu-card-img" src="./images/dal-chawal.webp" alt="Sunday dal chawal homemade rice and lentil meal" loading="lazy">
+<img class="menu-card-img" src="./images/dal-chawal.webp" alt="Sunday dal chawal homemade rice and lentil meal" width="400" height="240" loading="lazy">
 
 <div class="card-content">
 
@@ -1732,7 +1751,7 @@ Comforting homemade rice and lentil meals with aromatic spices and fresh sides.
 
 <div class="card" data-aos="fade-up" data-aos-delay="200">
 
-<img class="menu-card-img" src="./images/bindi-with-chapati.jpg" alt="Monday homemade vegetable curry with fresh chapati" loading="lazy">
+<img class="menu-card-img" src="./images/bindi-with-chapati.jpg" alt="Monday homemade vegetable curry with fresh chapati" width="400" height="240" loading="lazy">
 
 <div class="card-content">
 
@@ -1763,7 +1782,7 @@ Seasonal vegetables cooked with traditional herbs and served with fresh chapati.
 
 <div class="card" data-aos="fade-up">
 
-<img class="menu-card-img" src="./images/shami-kabab.webp" alt="Tuesday shami kabab and paratha snack platter" loading="lazy">
+<img class="menu-card-img" src="./images/shami-kabab.webp" alt="Tuesday shami kabab and paratha snack platter" width="400" height="240" loading="lazy">
 
 <div class="card-content">
 
@@ -1794,7 +1813,7 @@ A delicious mix of hearty snacks and parathas with green chutney and homemade fl
 
 <div class="card" data-aos="fade-up" data-aos-delay="100">
 
-<img class="menu-card-img" src="./images/chicken-chowmen.jpg" alt="Wednesday chicken chow mein Chinese style dinner" loading="lazy">
+<img class="menu-card-img" src="./images/chicken-chowmen.jpg" alt="Wednesday chicken chow mein Chinese style dinner" width="400" height="240" loading="lazy">
 
 <div class="card-content">
 
@@ -1825,7 +1844,7 @@ Stir-fried noodles and pasta with chicken, vegetables and a savory homemade sauc
 
 <div class="card" data-aos="fade-up" data-aos-delay="200">
 
-<img class="menu-card-img" src="./images/mixed-sabzi.jpg" alt="Thursday mixed sabzi homemade vegetable dinner" loading="lazy">
+<img class="menu-card-img" src="./images/mixed-sabzi.jpg" alt="Thursday mixed sabzi homemade vegetable dinner" width="400" height="240" loading="lazy">
 
 <div class="card-content">
 
@@ -2300,27 +2319,27 @@ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;">
 
 <div class="card" data-aos="zoom-in">
-<img class="gallery-img" loading="lazy">
+<img class="gallery-img" width="400" height="240" loading="lazy">
 </div>
 
 <div class="card" data-aos="zoom-in" data-aos-delay="100">
-<img class="gallery-img" loading="lazy">
+<img class="gallery-img" width="400" height="240" loading="lazy">
 </div>
 
 <div class="card" data-aos="zoom-in" data-aos-delay="200">
-<img class="gallery-img" loading="lazy">
+<img class="gallery-img" width="400" height="240" loading="lazy">
 </div>
 
 <div class="card" data-aos="zoom-in">
-<img class="gallery-img" loading="lazy">
+<img class="gallery-img" width="400" height="240" loading="lazy">
 </div>
 
 <div class="card" data-aos="zoom-in" data-aos-delay="100">
-<img class="gallery-img" loading="lazy">
+<img class="gallery-img" width="400" height="240" loading="lazy">
 </div>
 
 <div class="card" data-aos="zoom-in" data-aos-delay="200">
-<img class="gallery-img" loading="lazy">
+<img class="gallery-img" width="400" height="240" loading="lazy">
 </div>
 
 </div>
@@ -2642,6 +2661,8 @@ without worrying about cooking every evening.
 </a>
 
 </section>
+
+</main>
 
 <!-- ===================================================== -->
 <!-- FOOTER -->
@@ -3043,7 +3064,8 @@ transition:.3s;">
 
 <a href="https://api.whatsapp.com/send?phone=966564241776&text=Hi%2C%20I%20am%20contacting%20you%20through%20your%20website.%20I%20am%20interested%20in%20your%20Karachi%20Jumma%20Biryani.%20Please%20share%20the%20price%2C%20availability%2C%20and%20delivery%20details."
    class="whatsapp"
-   target="_blank">
+   target="_blank"
+   aria-label="Chat with us on WhatsApp">
 
     <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
 
@@ -3132,39 +3154,35 @@ behavior:"smooth"
 // Active Navigation
 // ==============================
 
-const sections=document.querySelectorAll("section");
+const sections=document.querySelectorAll("section[id]");
 
 const navLinks=document.querySelectorAll("nav ul li a");
 
-window.addEventListener("scroll",()=>{
-
-let current="";
-
-sections.forEach(section=>{
-
-const sectionTop=section.offsetTop-120;
-
-if(pageYOffset>=sectionTop){
-
-current=section.getAttribute("id");
-
-}
-
-});
+const setActiveLink=(current)=>{
 
 navLinks.forEach(link=>{
 
-link.style.color="#444";
+link.style.color= link.getAttribute("href")==="#"+current ? "#2E7D32" : "#444";
 
-if(link.getAttribute("href")==="#"+current){
+});
 
-link.style.color="#4CAF50";
+};
+
+const sectionObserver=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+setActiveLink(entry.target.getAttribute("id"));
 
 }
 
 });
 
-});
+},{ rootMargin:"-120px 0px -70% 0px" });
+
+sections.forEach(section=>sectionObserver.observe(section));
 
 // ==============================
 // Image Hover Zoom
